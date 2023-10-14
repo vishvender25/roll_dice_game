@@ -1,3 +1,9 @@
+var player1_name = prompt("Enter Player 1 name : ");
+var player2_name = prompt("Enter player 2 name : ");
+
+document.getElementById("player1").innerText = player1_name;
+document.getElementById("player2").innerText = player2_name;
+
 var player1_score = Math.random();
 var player2_score = Math.random();
 
@@ -15,16 +21,17 @@ player2_image = images[player2_score - 1];
 
 // alert("Player 1 score is " + player1_score + " , Player 2 score is " + player2_score);
 
+
 document.querySelectorAll('.img1')[0].setAttribute('src', `./images/${player1_image}`);
 document.querySelectorAll('.img2')[0].setAttribute('src', `./images/${player2_image}`);
 
 
 
 if(player1_score > player2_score){
-    document.querySelectorAll(".result")[0].innerText = "Result : Player 1 wins";
+    document.querySelectorAll(".result")[0].innerText = `Result : ${player1_name} wins`;
 }
 else if(player1_score < player2_score){
-    document.querySelectorAll(".result")[0].innerText = "Result : Player 2 wins";
+    document.querySelectorAll(".result")[0].innerText = `Result : ${player2_name} wins`;
 }
 else{
     document.querySelectorAll(".result")[0].innerText = "Result : Its a tie!!";
